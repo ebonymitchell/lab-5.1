@@ -40,6 +40,14 @@ addProductButton.addEventListener("click", function () {
         return;
     }
 
+     // Check if the product price is empty
+    if (item.price === "" || parseFloat(item.price) <=0) {
+        alert("Please ente a valid price.");
+
+        // Stop the function here
+        return;
+    }
+
     // Create a new <li> for the product
     let listItem = document.createElement("li");
 
