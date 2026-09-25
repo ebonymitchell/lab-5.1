@@ -40,8 +40,8 @@ addProductButton.addEventListener("click", function () {
         return;
     }
 
-     // Check if the product price is empty
-    if (item.price === "" || parseFloat(item.price) <=0) {
+    // Check if the product price is empty or invalid
+    if (item.price === "" || parseFloat(item.price) <= 0) {
         alert("Please ente a valid price.");
 
         // Stop the function here
@@ -53,6 +53,18 @@ addProductButton.addEventListener("click", function () {
 
     // Display the product name and price inside the <li>
     listItem.innerText = `${item.name} - $${item.price}`;
+
+    // Create a new <button> element for removing the product
+    let removeButton = document.createElement("button");
+
+    // Put the word "Remove" inside the button
+    removeButton.innerText = "Remove";
+
+    // Add the Remove button inside the product's <li>
+    listItem.appendChild(removeButton);
+
+    // Run the removeItem function when the Remove button is clicked
+    removeButton.addEventListener("click", removeItem);
 
     // Add the new <li> to the cart <ul>
     cart.appendChild(listItem);
@@ -87,5 +99,6 @@ function removeItem(event) {
 
     // Remove the <li> from the page
     item.remove();
+
 };
 
