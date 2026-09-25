@@ -58,6 +58,9 @@ addProductButton.addEventListener("click", function () {
 
     // Clear the product name input
     productNameInput.value = "";
+
+    // Clear the product price input
+    productPriceInput.value = "";
 });
 
 
