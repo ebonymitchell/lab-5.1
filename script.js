@@ -61,6 +61,9 @@ addProductButton.addEventListener("click", function () {
     // Create a new <li> for the product
     let listItem = document.createElement("li");
 
+    // Add the cart-item class so the CSS styles are applied
+    listItem.classList.add("cart-item");
+
     // Store the product's price on the <li> so we can use it when removing the item
     listItem.dataset.price = item.price;
 
