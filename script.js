@@ -32,8 +32,8 @@ addProductButton.addEventListener("click", function () {
         price: productPriceInput.value
     };
 
-    // Check if the product name is empty
-    if (item.name === "") {
+    // Check if the product name is empty or contains only spaces
+    if (item.name.trim() === "") {
         alert("Please enter an item.");
 
         // Stop the function here
