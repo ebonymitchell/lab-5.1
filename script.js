@@ -51,6 +51,9 @@ addProductButton.addEventListener("click", function () {
     // Create a new <li> for the product
     let listItem = document.createElement("li");
 
+    // Store the product's price on the <li> so we can use it when removing the item
+    listItem.dataset.price = item.price;
+
     // Display the product name and price inside the <li>
     listItem.innerText = `${item.name} - $${item.price}`;
 
@@ -92,7 +95,7 @@ function removeItem(event) {
     const item = event.target.closest('li');
 
     // Get the item's stored price and convert it from text into a number
-    const price = parseFloat(item.price);
+    const price = parseFloat(item.dataset.price);
 
     // Subtract the removed item's price from the total
     updateTotalPrice(-price);
