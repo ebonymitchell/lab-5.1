@@ -48,6 +48,16 @@ addProductButton.addEventListener("click", function () {
         return;
     }
 
+    // Check if the product is already in the shopping list
+    let duplicateItem = shoppingList.some(function (product) {
+        return product.name.toLowerCase() === item.name.toLowerCase();
+    });
+
+    if (duplicateItem) {
+        alert("This product is already in the cart.");
+        return;
+    }
+
     // Create a new <li> for the product
     let listItem = document.createElement("li");
 
