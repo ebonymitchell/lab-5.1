@@ -100,6 +100,16 @@ function removeItem(event) {
     // Subtract the removed item's price from the total
     updateTotalPrice(-price);
 
+    // Find the removed product in the shoppingList array
+    let itemIndex = shoppingList.findIndex(function (product) {
+        return product.price === item.dataset.price;
+    });
+
+    // Remove the product from the shoppingList array
+    if (itemIndex !== -1) {
+        shoppingList.splice(itemIndex, 1);
+    }
+
     // Remove the <li> from the page
     item.remove();
 
