@@ -54,8 +54,8 @@ addProductButton.addEventListener("click", function () {
     // Store the product's price on the <li> so we can use it when removing the item
     listItem.dataset.price = item.price;
 
-    // Display the product name and price inside the <li>
-    listItem.innerText = `${item.name} - $${item.price}`;
+    // Display the product name and price with 2 decimal places
+    listItem.innerText = `${item.name} - $${parseFloat(item.price).toFixed(2)}`;
 
     // Create a new <button> element for removing the product
     let removeButton = document.createElement("button");
